@@ -28,10 +28,12 @@
 
 .up {
   grid-area: p1;
+  color: white;
 }
 
 .down {
   grid-area: p2;
+  color: white;
 }
 
 button {
