@@ -34,4 +34,14 @@
   grid-area: p2;
 }
 
+button {
+  background-color: #363636;
+  color: white;
+  font-size: xx-large;
+  font-weight: 700;
+  border-radius: 10rem;
+  border: none;
+  outline: none;
+  padding: 1rem;
+}
 
