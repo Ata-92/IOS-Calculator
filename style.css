@@ -8,10 +8,10 @@
   border: .1rem solid;
   border-radius: 1rem;
   background-color: black;
-  width: 30vw;
-  height: 80vh;
+  width: 24vw;
+  height: 90vh;
   margin: 1rem auto;
-  padding: 3rem 0;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(7, 1fr);
@@ -25,3 +25,13 @@
   "i13 i14 i15 i16"
   "i17 i17 i18 i19";
 }
+
+.up {
+  grid-area: p1;
+}
+
+.down {
+  grid-area: p2;
+}
+
+
