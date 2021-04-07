@@ -45,3 +45,17 @@ button {
   padding: 1rem;
 }
 
+.item1, .item2, .item3 {
+  background-color: #A4A4A4;
+  color: black;
+}
+
+.item4, .item8, .item12, .item16, .item19 {
+  background-color: #FF9834;
+}
+
+.item17 {
+  grid-area: i17;
+  text-align: left;
+  padding-left: 2rem;
+}
