@@ -75,7 +75,22 @@ buttons[15].addEventListener("click", () => {
   }
 });
 
-
+buttons[18].addEventListener("click", () => {
+  if (lineUp.textContent == "") {
+    lineUp.textContent = lineDown.textContent + " =";
+  } else {
+    lineUp.textContent = lineUp.textContent + " " + lineDown.textContent + " =";
+    if (lineUp.textContent.includes("/")) {
+      lineDown.textContent = lineUp.textContent.split(" ")[0] / lineDown.textContent;
+    } else if (lineUp.textContent.includes("*")) {
+      lineDown.textContent = lineUp.textContent.split(" ")[0] * lineDown.textContent;
+    } else if (lineUp.textContent.includes("-")) {
+      lineDown.textContent = lineUp.textContent.split(" ")[0] - lineDown.textContent;
+    } else if (lineUp.textContent.includes("+")) {
+      lineDown.textContent = lineUp.textContent.split(" ")[0] + lineDown.textContent;
+    }
+  }
+});
 
 
 for (let i = 4; i < 18; i++) {
