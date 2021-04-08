@@ -29,11 +29,15 @@
 .up {
   grid-area: p1;
   color: white;
+  text-align: right;
+  font-size: 2rem;
 }
 
 .down {
   grid-area: p2;
   color: white;
+  text-align: right;
+  font-size: 4rem;
 }
 
 button {
