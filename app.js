@@ -76,3 +76,12 @@ buttons[15].addEventListener("click", () => {
 });
 
 
+
+
+for (let i = 4; i < 18; i++) {
+  buttons[i].addEventListener("click", () => {
+    if ([4, 5, 6, 8, 9, 10, 12, 13, 14, 17].includes(i)) {
+      lineDown.textContent += buttons[i].textContent;
+    }
+  });
+}
