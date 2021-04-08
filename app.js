@@ -9,18 +9,16 @@ buttons[0].addEventListener("click", () => {
   lineDown.textContent = 0;
 });
 
-let counter = 0;
 buttons[1].addEventListener("click", () => {
-  counter++;
-  if (counter % 2 == 1 && lineDown.textContent != 0) {
+  if (lineDown.textContent.includes("-") && lineDown.textContent != 0) {
+    lineDown.textContent = lineDown.textContent.slice(1);
+  } else if (!lineDown.textContent.includes("-") && lineDown.textContent != 0) {
     lineDown.textContent = "-" + lineDown.textContent;
-  } else {
-    lineDown.textContent = lineDown.textContent;
   }
 });
 
 buttons[2].addEventListener("click", () => {
-  if (lineDown.textContent.includes("-") && lineDown.textContent.length == 2) {
+  if ((lineDown.textContent.includes("-") && lineDown.textContent.length == 2) || lineDown.textContent.length == 1) {
     lineDown.textContent = 0;
   } else {
     lineDown.textContent = lineDown.textContent.slice(0, -1);
@@ -115,10 +113,10 @@ buttons[18].addEventListener("click", () => {
   }
 });
 
-for (let i = 4; i < 18; i++) {
+for (let i = 4; i < 17; i++) {
   buttons[i].addEventListener("click", () => {
-    if ([4, 5, 6, 8, 9, 10, 12, 13, 14, 17].includes(i)) {
-      if (lineDown.textContent == 0) {
+    if ([4, 5, 6, 8, 9, 10, 12, 13, 14, 16].includes(i)) {
+      if (lineDown.textContent == 0 && !lineDown.textContent.includes(".")) {
         lineDown.textContent = buttons[i].textContent;
       } else {
         lineDown.textContent += buttons[i].textContent;
@@ -126,3 +124,9 @@ for (let i = 4; i < 18; i++) {
     }
   });
 }
+
+buttons[17].addEventListener("click", () => {
+  if (!lineDown.textContent == "" && !lineDown.textContent.includes(".")) {
+    lineDown.textContent += ".";
+  }
+});
