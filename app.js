@@ -51,3 +51,28 @@ buttons[7].addEventListener("click", () => {
   }
 });
 
+buttons[11].addEventListener("click", () => {
+  if (lineUp.textContent == "") {
+    lineUp.textContent = lineDown.textContent + " -";
+  } else {
+    if (lineUp.textContent.includes("-")) {
+      lineUp.textContent = lineUp.textContent.split(" ")[0] - lineDown.textContent + " -";
+    } else {
+      lineUp.textContent = lineUp.textContent.slice(0, -2) + " -";
+    }
+  }
+});
+
+buttons[15].addEventListener("click", () => {
+  if (lineUp.textContent == "") {
+    lineUp.textContent = lineDown.textContent + " +";
+  } else {
+    if (lineUp.textContent.includes("+")) {
+      lineUp.textContent = lineUp.textContent.split(" ")[0] + lineDown.textContent + " +";
+    } else {
+      lineUp.textContent = lineUp.textContent.slice(0, -2) + " +";
+    }
+  }
+});
+
+
