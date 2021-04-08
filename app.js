@@ -31,57 +31,76 @@ buttons[3].addEventListener("click", () => {
   if (lineUp.textContent == "") {
     lineUp.textContent = lineDown.textContent + " /";
   } else {
-    if (lineUp.textContent.includes("/")) {
+    if (lineUp.textContent.includes("=")) {
+      lineUp.textContent = lineDown.textContent + " /";
+    } else if (lineUp.textContent.includes("/") && lineDown.textContent != "") {
       lineUp.textContent = lineUp.textContent.split(" ")[0] / lineDown.textContent + " /";
-      lineDown.textContent = lineUp.textContent.split(" ")[0] + lineDown.textContent;
     } else {
       lineUp.textContent = lineUp.textContent.slice(0, -2) + " /";
     }
   }
+  lineDown.textContent = "";
 });
 
 buttons[7].addEventListener("click", () => {
   if (lineUp.textContent == "") {
     lineUp.textContent = lineDown.textContent + " *";
   } else {
-    if (lineUp.textContent.includes("*")) {
+    if (lineUp.textContent.includes("=")) {
+      lineUp.textContent = lineDown.textContent + " *";
+    } else if (lineUp.textContent.includes("*") && lineDown.textContent != "") {
       lineUp.textContent = lineUp.textContent.split(" ")[0] * lineDown.textContent + " *";
-      lineDown.textContent = lineUp.textContent.split(" ")[0] + lineDown.textContent;
     } else {
       lineUp.textContent = lineUp.textContent.slice(0, -2) + " *";
     }
   }
+  lineDown.textContent = "";
 });
 
 buttons[11].addEventListener("click", () => {
   if (lineUp.textContent == "") {
     lineUp.textContent = lineDown.textContent + " -";
   } else {
-    if (lineUp.textContent.includes("-")) {
+    if (lineUp.textContent.includes("=")) {
+      lineUp.textContent = lineDown.textContent + " -";
+    } else if (lineUp.textContent.includes("-") && lineDown.textContent != "") {
       lineUp.textContent = lineUp.textContent.split(" ")[0] - lineDown.textContent + " -";
-      lineDown.textContent = lineUp.textContent.split(" ")[0] + lineDown.textContent;
     } else {
       lineUp.textContent = lineUp.textContent.slice(0, -2) + " -";
     }
   }
+  lineDown.textContent = "";
 });
 
 buttons[15].addEventListener("click", () => {
   if (lineUp.textContent == "") {
     lineUp.textContent = lineDown.textContent + " +";
   } else {
-    if (lineUp.textContent.includes("+")) {
-      lineUp.textContent = lineUp.textContent.split(" ")[0] + lineDown.textContent + " +";
-      lineDown.textContent = lineUp.textContent.split(" ")[0] + lineDown.textContent;
+    if (lineUp.textContent.includes("=")) {
+      lineUp.textContent = lineDown.textContent + " +";
+    } else if (lineUp.textContent.includes("+") && lineDown.textContent != "") {
+      lineUp.textContent = parseInt(lineUp.textContent.split(" ")[0]) + parseInt(lineDown.textContent) + " +";
     } else {
       lineUp.textContent = lineUp.textContent.slice(0, -2) + " +";
     }
   }
+  lineDown.textContent = "";
 });
 
 buttons[18].addEventListener("click", () => {
   if (lineUp.textContent == "") {
     lineUp.textContent = lineDown.textContent + " =";
+  } else if (lineUp.textContent.includes("=")) {
+    lineUp.textContent = lineDown.textContent + " " + lineUp.textContent.split(" ")[1] + " " + lineUp.textContent.split(" ")[2] + " " + lineUp.textContent.split(" ")[3];
+    if (lineUp.textContent.includes("/")) {
+      lineDown.textContent = lineUp.textContent.split(" ")[0] / lineUp.textContent.split(" ")[2];
+    } else if (lineUp.textContent.includes("*")) {
+      lineDown.textContent = lineUp.textContent.split(" ")[0] * lineUp.textContent.split(" ")[2];
+    } else if (lineUp.textContent.includes("-")) {
+      lineDown.textContent = lineUp.textContent.split(" ")[0] - lineUp.textContent.split(" ")[2];
+    } else if (lineUp.textContent.includes("+")) {
+      lineDown.textContent = parseInt(lineUp.textContent.split(" ")[0]) + parseInt(lineUp.textContent.split(" ")[2]);
+    }
   } else {
     lineUp.textContent = lineUp.textContent + " " + lineDown.textContent + " =";
     if (lineUp.textContent.includes("/")) {
@@ -91,11 +110,10 @@ buttons[18].addEventListener("click", () => {
     } else if (lineUp.textContent.includes("-")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] - lineDown.textContent;
     } else if (lineUp.textContent.includes("+")) {
-      lineDown.textContent = lineUp.textContent.split(" ")[0] + lineDown.textContent;
+      lineDown.textContent = parseInt(lineUp.textContent.split(" ")[0]) + parseInt(lineDown.textContent);
     }
   }
 });
-
 
 for (let i = 4; i < 18; i++) {
   buttons[i].addEventListener("click", () => {
