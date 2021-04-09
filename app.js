@@ -94,7 +94,7 @@ buttons[18].addEventListener("click", () => {
       lineDown.textContent = lineUp.textContent.split(" ")[0] / lineUp.textContent.split(" ")[2];
     } else if (lineUp.textContent.includes("*")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] * lineUp.textContent.split(" ")[2];
-    } else if (lineUp.textContent.includes("-")) {
+    } else if (lineUp.textContent.includes("-") && !lineUp.textContent.includes("+")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] - lineUp.textContent.split(" ")[2];
     } else if (lineUp.textContent.includes("+")) {
       lineDown.textContent = parseInt(lineUp.textContent.split(" ")[0]) + parseInt(lineUp.textContent.split(" ")[2]);
@@ -105,9 +105,9 @@ buttons[18].addEventListener("click", () => {
       lineDown.textContent = lineUp.textContent.split(" ")[0] / lineDown.textContent;
     } else if (lineUp.textContent.includes("*")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] * lineDown.textContent;
-    } else if (lineUp.textContent.includes("-")) {
+    } else if (lineUp.textContent.includes("-") && !lineUp.textContent.includes("+")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] - lineDown.textContent;
-    } else if (lineUp.textContent.includes("+")) {
+    } else if (lineUp.textContent.includes("+") || lineUp.textContent.includes("-")) {
       lineDown.textContent = parseInt(lineUp.textContent.split(" ")[0]) + parseInt(lineDown.textContent);
     }
   }
