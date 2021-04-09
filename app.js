@@ -77,7 +77,7 @@ buttons[15].addEventListener("click", () => {
     if (lineUp.textContent.includes("=")) {
       lineUp.textContent = lineDown.textContent + " +";
     } else if (lineUp.textContent.includes("+") && lineDown.textContent != "") {
-      lineUp.textContent = parseInt(lineUp.textContent.split(" ")[0]) + parseInt(lineDown.textContent) + " +";
+      lineUp.textContent = parseFloat(lineUp.textContent.split(" ")[0]) + parseFloat(lineDown.textContent) + " +";
     } else {
       lineUp.textContent = lineUp.textContent.slice(0, -2) + " +";
     }
@@ -97,7 +97,7 @@ buttons[18].addEventListener("click", () => {
     } else if (lineUp.textContent.includes("-") && !lineUp.textContent.includes("+")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] - lineUp.textContent.split(" ")[2];
     } else if (lineUp.textContent.includes("+")) {
-      lineDown.textContent = parseInt(lineUp.textContent.split(" ")[0]) + parseInt(lineUp.textContent.split(" ")[2]);
+      lineDown.textContent = parseFloat(lineUp.textContent.split(" ")[0]) + parseFloat(lineUp.textContent.split(" ")[2]);
     }
   } else {
     lineUp.textContent = lineUp.textContent + " " + lineDown.textContent + " =";
@@ -108,7 +108,7 @@ buttons[18].addEventListener("click", () => {
     } else if (lineUp.textContent.includes("-") && !lineUp.textContent.includes("+")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] - lineDown.textContent;
     } else if (lineUp.textContent.includes("+") || lineUp.textContent.includes("-")) {
-      lineDown.textContent = parseInt(lineUp.textContent.split(" ")[0]) + parseInt(lineDown.textContent);
+      lineDown.textContent = parseFloat(lineUp.textContent.split(" ")[0]) + parseFloat(lineDown.textContent);
     }
   }
 });
