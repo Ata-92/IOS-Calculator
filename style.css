@@ -12,13 +12,12 @@ html {
   border: .1rem solid;
   border-radius: 1rem;
   background-color: black;
-  width: 22rem;
-  height: 40rem;
-  margin: 1rem auto;
+  width: 21rem;
+  margin: 2.5rem auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(4, 4.5rem);
+  grid-template-rows: repeat(7, 4.5rem);
   grid-gap: 1rem;
   grid-template-areas:
   "p1 p1 p1 p1"
@@ -47,7 +46,7 @@ html {
 button {
   background-color: #363636;
   color: white;
-  font-size: xx-large;
+  font-size: 2rem;
   font-weight: 700;
   border-radius: 10rem;
   border: none;
@@ -71,15 +70,3 @@ button {
   padding-left: 2rem;
 }
 
-
-@media screen and (max-width: 1024px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 10px;
-  }
-}
