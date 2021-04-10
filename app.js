@@ -88,7 +88,7 @@ buttons[15].addEventListener("click", () => {
 buttons[18].addEventListener("click", () => {
   if (lineUp.textContent == "") {
     lineUp.textContent = lineDown.textContent + " =";
-  } else if (lineUp.textContent.includes("=")) {
+  } else if (lineUp.textContent.includes("=") && lineUp.textContent.split(" ").length > 2) {
     lineUp.textContent = lineDown.textContent + " " + lineUp.textContent.split(" ")[1] + " " + lineUp.textContent.split(" ")[2] + " " + lineUp.textContent.split(" ")[3];
     if (lineUp.textContent.includes("/")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] / lineUp.textContent.split(" ")[2];
@@ -99,7 +99,7 @@ buttons[18].addEventListener("click", () => {
     } else if (lineUp.textContent.includes("+")) {
       lineDown.textContent = parseFloat(lineUp.textContent.split(" ")[0]) + parseFloat(lineUp.textContent.split(" ")[2]);
     }
-  } else {
+  } else if (!lineUp.textContent.includes("=") && lineDown.textContent != ""){
     lineUp.textContent = lineUp.textContent + " " + lineDown.textContent + " =";
     if (lineUp.textContent.includes("/")) {
       lineDown.textContent = lineUp.textContent.split(" ")[0] / lineDown.textContent;
