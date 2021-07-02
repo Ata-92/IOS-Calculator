@@ -22,9 +22,9 @@ Project aims to create a calculator.
         |----index.js
 ```
 
-## Expected Outcome
+## My Outcome
 
-![Project 002 Snapshot](project_003.png)
+![IOS-Calculator](ios-calculator.gif)
 
 ## Objective
 
