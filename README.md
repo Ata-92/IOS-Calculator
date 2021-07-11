@@ -1,7 +1,10 @@
-<p>Clarusway<img align="right"
-  src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg"  width="15px"></p>
+# IOS Calculator
+ 
+👉 <a href="https://ata-92.github.io/IOS-Calculator/" target="_blank">IOS Calculator Website</a>
 
-# Project-003 : Calculator (JS-03)
+## My Outcome
+
+![IOS-Calculator](ios-calculator.gif)
 
 ## Description
 Project aims to create a calculator.
@@ -21,10 +24,6 @@ Project aims to create a calculator.
         |----style.css   
         |----index.js
 ```
-
-## My Outcome
-
-![IOS-Calculator](ios-calculator.gif)
 
 ## Objective
 
